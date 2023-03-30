@@ -9,3 +9,10 @@ Everything you do here is contained within this one codespace. There is no repos
 ## Environment
 
 The Anaconda environment is in `environment.yml` in the root of the repository. Select conda as the python interpreter within Visual Studio Code in the codespace to execute the code.
+
+## Data Processing
+Data such as the 311 Calls dataset lives in our Amazon Simple Storage Service (S3) bucket, `s3://datathinking.org`.
+
+Data is cleaned using the data build tool (`dbt`), whose configuration lives in `data_build_tool_for_processing_data/dbt_project.yml` (generated using `dbt init`). 
+
+In the file called `data_build_tool_for_processing_data/new_york_city_311_calls.sql`, you can see the structured query language (SQL) query that is used to clean the data, and in `data_build_tool_for_processing_data/profiles.yml` you can see the credentials for the S3 bucket or the path that the `dbt build` command writes to in executing the SQL query.
